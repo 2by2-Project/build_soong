@@ -144,7 +144,7 @@ func (p *buildPropModule) GenerateAndroidBuildActions(ctx ModuleContext) {
 	cmd.FlagWithInput("--platform-preview-sdk-fingerprint-file=", ApiFingerprintPath(ctx))
 	cmd.FlagWithInput("--product-config=", PathForModuleSrc(ctx, proptools.String(p.properties.Product_config)))
 	cmd.FlagWithArg("--partition=", partition)
-	cmd.FlagWithArg("--yaap-device=", ctx.Config().Getenv("YAAP_DEVICE"))
+	cmd.FlagWithArg("--custom-device=", ctx.Config().Getenv("CUSTOM_DEVICE"))
 	cmd.FlagForEachInput("--prop-files=", p.propFiles(ctx))
 	cmd.FlagWithOutput("--out=", p.outputFilePath)
 

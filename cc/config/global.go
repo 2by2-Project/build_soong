@@ -294,7 +294,7 @@ var (
 		// Allow using VLA CXX extension.
 		"-Wno-vla-cxx-extension",
 
-		// YAAP additions since we will be minimally updating external platform
+		// 2by2 additions since we will be minimally updating external platform
 		"-Wno-error=deprecated-non-prototype",
 		"-Wno-error=strict-prototypes",
 		"-Wno-error=enum-conversion",

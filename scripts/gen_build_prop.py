@@ -77,7 +77,7 @@ def parse_args():
   parser.add_argument("--product-config", required=True, type=argparse.FileType("r"))
   parser.add_argument("--partition", required=True)
   parser.add_argument("--build-broken-dup-sysprop", action="store_true", default=False)
-  parser.add_argument('--yaap-device', required=True)
+  parser.add_argument('--custom-device', required=True)
 
   parser.add_argument("--out", required=True, type=argparse.FileType("w"))
 
@@ -95,7 +95,7 @@ def parse_args():
   config["BuildHostname"] = args.build_hostname_file.read().strip()
   config["BuildNumber"] = args.build_number_file.read().strip()
   config["BuildUsername"] = args.build_username
-  config["YaapDevice"] = args.yaap_device
+  config["YaapDevice"] = args.custom_device
 
   build_version_tags_list = config["BuildVersionTags"]
   if config["BuildType"] == "debug":
@@ -258,7 +258,7 @@ def generate_build_info(args):
 
   print(f"# ro.build.product is obsolete; use ro.product.device")
   print(f"ro.build.product={config['DeviceName']}")
-  print(f"ro.yaap.device={config['YaapDevice']}")
+  print(f"ro.2by2.device={config['YaapDevice']}")
 
   print(f"# Do not try to parse description or thumbprint")
   print(f"ro.build.description?={config['BuildDesc']}")
