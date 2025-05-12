@@ -261,7 +261,7 @@ def generate_build_info(args):
 
   print(f"# ro.build.product is obsolete; use ro.product.device")
   print(f"ro.build.product={config['DeviceName']}")
-  print(f"ro.yaap.device={config['YaapDevice']}")
+  print(f"ro.2by2.device={config['YaapDevice']}")
 
   print(f"# Do not try to parse description or thumbprint")
   print(f"ro.build.description?={config['BuildDesc']}")
